@@ -3,7 +3,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Age {
+public class Age implements Serializable{
     private LocalDate birthdate;
     public Age(LocalDate birthdate){
         this.birthdate = birthdate;

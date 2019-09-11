@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.time.LocalDate;
 import java.util.Optional;
 
+@Controller
 public class AgeController {
     private String getHitungUmurPage(Optional<LocalDate> birthdate, Model model){
         if(birthdate.isPresent()){
