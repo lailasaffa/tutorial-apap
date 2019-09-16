@@ -14,7 +14,7 @@ public class Age implements Serializable{
 
     }
     public double mercurianYears(){
-        return Math.floor(this.earthianYears()/ .32);
+        return Math.floor(this.earthianYears()/ .24);
     }
     public double venusianYears(){
         return (Math.floor(this.earthianYears()/ .62));
