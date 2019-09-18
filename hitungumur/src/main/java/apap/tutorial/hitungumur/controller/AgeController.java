@@ -24,7 +24,7 @@ public class AgeController {
         return "HitungUmurPage.html";
     }
     @GetMapping(value = "/hitung-umur")
-    public String hitungUmurWithRequestParam(
+    public String hitungUmur(
             @RequestParam(value = "birthdate")
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                 Optional<LocalDate>birthdate,
