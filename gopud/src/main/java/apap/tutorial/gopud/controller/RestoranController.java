@@ -44,9 +44,7 @@ public class RestoranController {
         }
         else{
             model.addAttribute("namaResto",restoran.getNama());
-            System.out.println("1");
             restoranService.deleteRestoran(idRestoran);
-            System.out.println("2");
             return "delete-restoran";
         }
     }
