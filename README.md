@@ -21,3 +21,27 @@ Maven adalah sebuah project management dan comprehension tool. Maven perlu digun
 
  ### What I did not understand  
  Saya tidak mengerti bagaimana cara kerja Maven dan Spring Boot pada tutorial kali ini
+
+ ## Tutorial 2
+ #### Controller
+1. Cobalah untuk menambahkan sebuah restoran dengan mengakses link berikut:
+	http://localhost:8080/restoran/add?idRestoran=1&nama=PanyuFC&alamat=Kantin%20Fasilkom&nomorTelepon=14022
+
+	**Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.**
+	Yang terjadi adalah halaman error WhitePage, karena template untuk add-restoran belum dibuat
+
+ #### View Template
+2. Cobalah untuk menambahkan sebuah restoran dengan mengakses link berikut:
+	http://localhost:8080/restoran/add?idRestoran=2&nama=KentukuFC&alamat=Kantin%20FIK
+	
+	**Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.**
+	Yang terjadi adalah error Whitelabel Error Page, karena tidak ada parameter alamat, padahal required. 
+
+3. Jika Papa APAP ingin melihat restoran PanyuFC, link apa yang harus diakses?
+	http://localhost:8080/restoran/view?idRestoran=1&nama=PanyuFC&alamat=Kantin%20Fasilkom&nomorTelepon=14022
+
+4. Tambahkan 1 contoh restoran lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/restoran/viewall, apa yang akan ditampilkan? 
+	1. Melakukan Add Restoran kedua
+	![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-2-gopud/gopud/images/soal-4-1.PNG)
+	2. Akses Halaman ViewAll
+	![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-2-gopud/gopud/images/soal-4-2.PNG)
