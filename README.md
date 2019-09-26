@@ -70,10 +70,10 @@ Maven adalah sebuah project management dan comprehension tool. Maven perlu digun
     	Dimana menu akan memiliki relasi ManyToOne dengan restoran
 
 5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER
-	1. **FetchType.LAZY**
+	1. **FetchType.LAZY**<br/>
 		Kegunaan FetchType.LAZY adalah ketika dua entitas memiliki hubungan seperti OneToMany. Ketika satu entitas menggunakan fecth tipe Lazy,
 		maka entitas tersebut akan mengambil atribut entitas lain jika dibutuhkan saja, misalkan menggunakan method getStudent()
-	2. **FetchType.EAGER**
+	2. **FetchType.EAGER**<br/>
 		Sedangkan kegunaan tipe fetch EAGER adalah ketika suatu entitas ingin diakses dari database oleh entitas lain, maka seluruh atribut akan langsung di load tanpa kondisi apapun
-	3. **CascadeType.ALL**
+	3. **CascadeType.ALL**<br/>
 		Kegunaan CascadeType.ALL adalah juga untuk mengelola hubungan antar dua entitas. Dimana ketika ada perubahan pada satu entitas, maka perubahan tersebut harus di cascade kepada entitas lain
