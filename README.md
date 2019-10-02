@@ -77,3 +77,15 @@ Maven adalah sebuah project management dan comprehension tool. Maven perlu digun
 		Sedangkan kegunaan tipe fetch EAGER adalah ketika suatu entitas ingin diakses dari database oleh entitas lain, maka seluruh atribut akan langsung di load tanpa kondisi apapun
 	3. **CascadeType.ALL**<br/>
 		Kegunaan CascadeType.ALL adalah juga untuk mengelola hubungan antar dua entitas. Dimana ketika ada perubahan pada satu entitas, maka perubahan tersebut harus di cascade kepada entitas lain
+
+ ## Tutorial 4
+ 1. Jelaskan yang anda pelajari dari melakukan latihan nomor 2,dan jelaskan tahapan bagaimana anda menyelesaikan latihan nomor 2<br/>
+    >> Dari latihan nomor 2 saya mempelajari bagaimana fragment pada thymeleaf dapat menjadi dinamis. Saya juga mempelajari bahwa terdapat konsep reusing pada penggunaan Spring. <br/>
+    >> Tahapan yang saya kerjakan adalah pertama-tama mendefinisikan variable 'title' pada navbar di fragment.html. Kemudian saya akan melakukan replace pada body title di masing-masing halaman. Kemudian pada controller saya akan memasukkan attribute nama halaman tersebut pada variable "title"<br/>
+ 2. Jelaskan yang anda pelajari dari latihan nomor 3, dan jelaskan tahapan bagaimana anda menyelesaikan latihan nomor 3 <br/>
+    >> Dari latihan nomor 3 saya mempelajari cara menggunakan method POST dengan params. Dari latihan nomer 3 juga saya dapat menghapus dan menambahkan row pada field menu. <br/>
+    >> Tahapan yang saya lakukan pertama adalah membuat method addRow dan removeRow pada controller. Kemudian saya akan mengedit template sehingga row dapat ditambah sesuai dengan indexnya.<br/>
+ 3. Jelaskan perbedaan th:include dan th:replace <br/>
+th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sementara th:replace akan mengganti host tag dengan konten fragment yang didefinisikan didalam fragment.html</br>
+ 4. Jelaskan bagaimana penggunaan th:object beserta tujuannya<br/>
+ th:object digunakan dalam tag form, dimana th:object akan mendefinisikan variable yang akan digunakan untuk memanggil objek kedalam form kita

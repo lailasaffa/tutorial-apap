@@ -36,6 +36,11 @@ public class MenuServiceImpl implements MenuService{
     }
 
     @Override
+    public List<MenuModel> getListMenuOrderByHargaAsc(Long idRestoran) {
+        return menuDb.findByRestoranIdRestoranOrderByHarga(idRestoran);
+    }
+
+    @Override
     public MenuModel changeMenu(MenuModel menuModel) {
         //mengambil objek menu yang ingin diubah
         MenuModel targetMenu = menuDb.findById(menuModel.getId()).get();
