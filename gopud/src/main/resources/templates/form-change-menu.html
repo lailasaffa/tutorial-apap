@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Change Data Menu</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
+<nav th:replace="fragments/fragment :: navbar"></nav>
 <h3>Change Data Menu</h3>
 <form th:action="@{/menu/change/{id}(id=${menu.id})}" th:objects="${menu}" method="POST">
     <input type="hidden" th:field="*{menu.id}"/>

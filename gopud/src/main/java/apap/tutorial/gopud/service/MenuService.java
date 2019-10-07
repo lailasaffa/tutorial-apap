@@ -13,4 +13,6 @@ public interface MenuService {
     MenuModel changeMenu(MenuModel menuModel);
 
     Optional<MenuModel> getMenuByIdMenu(Long id);
+
+    List<MenuModel> getListMenuOrderByHargaAsc(Long idRestoran);
 }
