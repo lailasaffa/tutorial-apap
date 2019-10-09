@@ -92,7 +92,7 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
 
  ## Tutorial 5
 1. Jelaskan bagian mana saja dari test yang dibuat pada latihan no 2 adalah given, when, dan and then. <br/>
-    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-2-gopud/gopud/images/tutorial-5-soal-2.PNG)<br/>
+    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/tutorial-5-soal-2.PNG)<br/>
     1. **given** : Line 58 termasuk kondisi given karena merupakan inisiasi dari test.<br/>
     2. **when** : Line 59 termasuk kondisi when, karena merupakan apa yang seharusnya di return oleh database ketika ada kondisi given<br/>
     3. **then** : Line 60-63 termasuk kondisi then, karena merupakan hasil dari interaksi yang diharapkan<br/>
