@@ -118,9 +118,9 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
 ##Perubahan Coverage
 1. Method View pada Restoran Controller
     1. Sebelum coverage<br/>
-    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/restoran controller before.PNG)<br/>
+    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/restoran%20controller%20before.PNG)<br/>
     2. Sesudah coverage<br/>
-    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/restoran controller after.PNG)<br/>
+    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/restoran%20controller%20after.PNG)<br/>
 2. Menu Service 
     1. Sesudah coverage<br/>
-    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/menu service after.PNG)<br/>
+    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/menu%20service%20after.PNG)<br/>
