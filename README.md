@@ -115,7 +115,7 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
     1. Main class spring tidak diikutsertakan dalam perhitungan coverage karena pada tutorial ini hanya akan dilakukan test pada service dan controller. Bukan pada keseluruhan aplikasi (service, controller, model, dan repository)
     2. Dalam melakukan coverage analysis, kita hanya akan fokus pada class yang akan di cover dengan unit test. Dalam tutorial ini, contohnya adalah class controller dan services. Jika sebuah class tidak dicover dengan unit test, maka perlu untuk melakukan exclude pada class yang tidak related tersebut.
 
-##Perubahan Coverage
+##Perubahan Pada Coverage
 1. Method View pada Restoran Controller
     1. Sebelum coverage<br/>
     ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/restoran%20controller%20before.PNG)<br/>
