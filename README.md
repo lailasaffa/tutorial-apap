@@ -114,3 +114,13 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
 4. [Bonus] Jelaskan mengapa pada latihan no 3, main class spring tidak diikutsertakan ke dalam perhitungan coverage? Apa saja yang dapat menyebabkan suatu class dapat di-exclude dari perhitungan code coverage. <br/>
     1. Main class spring tidak diikutsertakan dalam perhitungan coverage karena pada tutorial ini hanya akan dilakukan test pada service dan controller. Bukan pada keseluruhan aplikasi (service, controller, model, dan repository)
     2. Dalam melakukan coverage analysis, kita hanya akan fokus pada class yang akan di cover dengan unit test. Dalam tutorial ini, contohnya adalah class controller dan services. Jika sebuah class tidak dicover dengan unit test, maka perlu untuk melakukan exclude pada class yang tidak related tersebut.
+
+##Perubahan Coverage
+1. Method View pada Restoran Controller
+    1. Sebelum coverage<br/>
+    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/restoran controller before.PNG)<br/>
+    2. Sesudah coverage<br/>
+    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/restoran controller after.PNG)<br/>
+2. Menu Service 
+    1. Sesudah coverage<br/>
+    ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/menu service after.PNG)<br/>
