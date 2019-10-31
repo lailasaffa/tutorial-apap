@@ -124,3 +124,11 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
 2. Menu Service 
     1. Sesudah coverage<br/>
     ![GitHub Logo](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-5-gopud/gopud/images/menu%20service%20after.PNG)<br/>
+
+## Tutorial 6
+1. Apa itu postman? Apa kegunaan dari postman?<br/>
+    Postman adalah sebuah platform untuk API development, Postman digunakan untuk pengguna yang ingin berkolaborasi membuat API
+2. Apa kegunaan dari annotation @JsonIgnoreProperties? <br/>
+    @JsonIgnoreProperties akan meng ignore property logical di dalam JSON serialization and deserialization. Dianotasi di class level
+3. Apa itu ResponseEntity dan apa kegunaannya<br/>
+    ResponseEntity dalam spring akan membuat melakukan set pada body, status dan header pada HTTP response
