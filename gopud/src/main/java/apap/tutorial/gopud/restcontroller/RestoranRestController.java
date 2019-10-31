@@ -75,15 +75,17 @@ public class RestoranRestController {
 
     @GetMapping(value = "/restorans")
     private List<RestoranModel> retrieveListRestoran(){
+
         return restoranRestService.retrieveListRestoran();
     }
 
     @GetMapping(value = "/restoran/{idRestoran}/status")
     private Mono<String> getStatus(@PathVariable Long idRestoran){
+
         return restoranRestService.getStatus(idRestoran);
     }
 
-    @GetMapping(value = "/full")
+    @GetMapping(value = "/restoran/full")
     private Mono<RestoranDetail> postStatus(){
         return restoranRestService.postStatus();
     }

@@ -1,7 +1,9 @@
 package apap.tutorial.gopud.restcontroller;
 
 import apap.tutorial.gopud.model.MenuModel;
+import apap.tutorial.gopud.model.RestoranModel;
 import apap.tutorial.gopud.service.MenuRestService;
+import apap.tutorial.gopud.service.RestoranRestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,9 @@ public class MenuRestController {
     @Autowired
     private MenuRestService menuRestService;
 
+    @Autowired
+    private RestoranRestService restoranRestService;
+
     @PostMapping(value = "/menu")
     private MenuModel createMenu(
             @Valid @RequestBody MenuModel menu,
@@ -28,6 +33,9 @@ public class MenuRestController {
             throw new ResponseStatusException(
               HttpStatus.BAD_REQUEST,"Request body has invalid type or missing field");
         }else{
+            RestoranModel restoran= restoranRestService.getRestoranByIdRestoran(2L);
+            restoran.getListMenu().add(menu);
+            menu.setRestoran(restoran);
             return menuRestService.createMenu(menu);
         }
     }
@@ -43,7 +51,7 @@ public class MenuRestController {
         }
     }
     @GetMapping(value = "/menu/{menuId}")
-    private MenuModel retrieveMenu(@PathVariable("idMenu") Long idMenu){
+    private MenuModel retrieveMenu(@PathVariable("menuId") Long idMenu){
         try{
             return menuRestService.getMenuByIdMenu(idMenu);
         }catch(NoSuchElementException e){

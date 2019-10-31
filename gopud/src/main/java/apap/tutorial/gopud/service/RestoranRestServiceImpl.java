@@ -78,7 +78,7 @@ public class RestoranRestServiceImpl implements RestoranRestService{
         MultiValueMap<String, String> data = new LinkedMultiValueMap<>();
         data.add("alamat","Jalan Akses UI No 2");
         data.add("nomorTelepon","028102810");
-        return this.webClient.post().uri("/rest/full")
+        return this.webClient.post().uri("/rest/restoran/full")
                 .syncBody(data)
                 .retrieve()
                 .bodyToMono(RestoranDetail.class);

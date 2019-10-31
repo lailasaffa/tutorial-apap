@@ -22,6 +22,7 @@ public class MenuRestServiceImpl implements MenuRestService{
 
     @Override
     public List<MenuModel> retrieveListMenu() {
+
         return menuDB.findAll();
     }
 
