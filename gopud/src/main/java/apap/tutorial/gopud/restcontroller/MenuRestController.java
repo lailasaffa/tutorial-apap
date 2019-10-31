@@ -40,11 +40,12 @@ public class MenuRestController {
         }
     }
     @PutMapping(value = "/menu/{menuId}")
-    private MenuModel updateMenu(
+    private ResponseEntity<String> updateMenu(
             @PathVariable(value = "menuId") Long idMenu,
             @RequestBody MenuModel menu){
         try{
-            return menuRestService.changeMenu(idMenu,menu);
+            menuRestService.changeMenu(idMenu,menu);
+            return ResponseEntity.ok("Menu update success!");
         }catch (NoSuchElementException e){
             throw new ResponseStatusException(
               HttpStatus.NOT_FOUND,"ID Menu "+String.valueOf(idMenu)+" Not Found");
@@ -69,7 +70,7 @@ public class MenuRestController {
     private ResponseEntity<String> deleteMenu(@PathVariable("menuId") Long idMenu){
         try{
             menuRestService.deleteMenu(idMenu);
-            return ResponseEntity.ok("Menu with ID "+String.valueOf(idMenu)+" Deleted!");
+            return ResponseEntity.ok("Menu has been deleted!");
         }catch(NoSuchElementException e){
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND,"Menu with ID "+String.valueOf(idMenu)+" Not Found!");
