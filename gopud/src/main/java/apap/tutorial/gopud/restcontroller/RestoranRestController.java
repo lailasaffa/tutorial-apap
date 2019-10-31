@@ -83,7 +83,7 @@ public class RestoranRestController {
         return restoranRestService.getStatus(idRestoran);
     }
 
-    @GetMapping(value = "/restoran/full")
+    @GetMapping(value = "/full")
     private Mono<RestoranDetail> postStatus(){
         return restoranRestService.postStatus();
     }
