@@ -36,7 +36,7 @@ public class RestoranInMemoryService implements RestoranService{
             if(restoran.getIdRestoran().equals(idRestoran)){
                 listRestoran.remove(restoran);
                 break;
-            }
+            }   
         }
     }
 
