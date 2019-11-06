@@ -1,7 +1,7 @@
 package apap.tutorial.gopud.service;
 
 import apap.tutorial.gopud.model.UserModel;
-import apap.tutorial.gopud.repository.UserRoleDB;
+import apap.tutorial.gopud.repository.UserDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -9,14 +9,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class UserRoleServiceImpl implements UserRoleService{
+public class UserServiceImpl implements UserService{
     @Autowired
-    private UserRoleDB userRoleDB;
+    private UserDB userDB;
     @Override
     public UserModel addUser(UserModel user) {
         String pass = encrypt(user.getPassword());
         user.setPassword(pass);
-        return userRoleDB.save(user);
+        return userDB.save(user);
     }
 
     @Override
