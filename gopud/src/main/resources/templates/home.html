@@ -12,17 +12,17 @@
     <div class="container-fluid">
         <h2 th:text="'Hello '+${#httpServletRequest.remoteUser}+' !'">Login as</h2>
         <h2> Selamat datang di GOPUD! </h2>
-        <button class="btn btn-primary">
+        <button class="btn btn-info">
             <a th:href="@{restoran/viewall}" style="color:white"> View All Restoran </a>
         </button>
         <hr>
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header"> Tambah Restoran </div>
+                    <div class="card-header bg-info text-white"> Tambah Restoran </div>
                     <div class="card-body">
                         <p>Fitur untuk menambah restoran</p>
-                        <button class="btn btn-primary">
+                        <button class="btn btn-info">
                             <a th:href="@{/restoran/add}" style="color:white"> Tambah Restoran </a>
                         </button>
                     </div>
@@ -33,23 +33,26 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Cari Restoran Berdasarkan ID</div>
+                    <div class="card-header bg-info text-white">Cari Restoran Berdasarkan ID</div>
                     <div class="card-body">
                         <form th:action="@{/restoran/view}" method="GET">
                             <label for="idRestoran" id="idRestoran">Id Restoran</label>
                             <input type="text" name="idRestoran" class="form-control"/>
                             <br>
-                            <button class="btn btn-primary" type="submit">Cari</button>
+                            <button class="btn btn-info" type="submit">Cari</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Tambah User Baru</div>
+                    <div class="card-header bg-info text-white">Tambah User Baru</div>
                     <div class="card-body">
+                        <div class="alert alert-info" role="alert" th:text="${addUser}">
+                        </div>
                         <form th:action="@{/user/addUser}" method="POST">
                             <label>User Name</label>
                             <input type="text" name="username" class="form-control"/>
@@ -61,12 +64,34 @@
                             <select name="role" class="form-control">
                                 <option selected value="">--Pilih Role--</option>
                                 <option th:each="role : ${listRole}"
-                                        th:value=$"{role.id}"
+                                        th:value="${role.id}"
                                         th:text="${role.role}">
                                 </option>
-                                <br>
-                                <button type="submit" class="btn btn-info">Simpan</button>
                             </select>
+                            <br>
+                            <button type="submit" class="btn btn-info">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-info text-white">Update Password</div>
+                    <div class="card-body">
+                        <div class="alert alert-info" role="alert" th:text="${changePassword}">
+                        </div>
+                        <form th:action="@{/user/updatePassword}" method="POST">
+                            <input type="hidden" name="username" th:value="${#httpServletRequest.userPrincipal.name}">
+                            <label>Password Lama</label>
+                            <input type="password" name="oldPass" class="form-control"/>
+                            <label>Password Baru</label>
+                            <input type="password" name="newPass" class="form-control"/>
+                            <label>Konfirmasi Password</label>
+                            <input type="password" name="confirmPass" class="form-control"/>
+                            <br>
+                            <button class="btn btn-info" type="submit">Ubah Password</button>
                         </form>
                     </div>
                 </div>
