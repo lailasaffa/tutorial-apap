@@ -133,7 +133,7 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
 3. Apa itu ResponseEntity dan apa kegunaannya<br/>
     ResponseEntity dalam spring akan membuat melakukan set pada body, status dan header pada HTTP response. ResponseEntity mewakili seluruh respons HTTP: kode status, header, dan body. Karena itu, kita dapat menggunakannya untuk mengkonfigurasi respons HTTP sepenuhnya
 
-##Tutorial 7
+## Tutorial 7
 1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?
     Otentikasi akan menentukan apakah seorang person adalah user atau tidak untuk mengakses sistem. Sementara otorisasi menentukan permission apa yang dimiliki oleh user dalam mengakses sebuah resource didalam sistem.<br/>
     1. Implementasi Otentikasi<br/>
