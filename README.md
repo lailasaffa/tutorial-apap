@@ -132,3 +132,18 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
     @JsonIgnoreProperties digunakan untuk menekan serialisasi properti (selama serialisasi), atau mengabaikan pemrosesan properti JSON yang dibaca (saat deserialisasi)
 3. Apa itu ResponseEntity dan apa kegunaannya<br/>
     ResponseEntity dalam spring akan membuat melakukan set pada body, status dan header pada HTTP response. ResponseEntity mewakili seluruh respons HTTP: kode status, header, dan body. Karena itu, kita dapat menggunakannya untuk mengkonfigurasi respons HTTP sepenuhnya
+
+##Tutorial 7
+1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?
+    Otentikasi akan menentukan apakah seorang person adalah user atau tidak untuk mengakses sistem. Sementara otorisasi menentukan permission apa yang dimiliki oleh user dalam mengakses sebuah resource didalam sistem.<br/>
+    1. Implementasi Otentikasi<br/>
+        Implementasi otentikasi dilakukan ketika user melakukan login. Sistem akan menentukan apakah person adalah user dengan method configAuthentication di WebSecurityConfig.java. Autentikasi juga ditentukan menggunakan interface UserDetailsService milik spring security. Menggunakan method loadUserByUsername, sistem akan memvalidasi apakah data person yang dimasukkan ketika login match dengan data user yang dimiliki sistem
+    2. Implementasi Otorisasi<br/>
+        Implementasi Otorisasi dilakukan setelah user melakukan login dan mendapatkan user role, maka sistem akan menentukan resource dalam sistem apa saja yang dimiliki oleh user. Contohnya di WebSecurityConfig.java, method configure akan menentukan autorisasi apa yang dimiliki user, berdasarkan role nya admin, merchant, atau user. Contoh autorisasinya adalah hanya admin yang dapat menambah user baru dan hanya merchant yang dapat melihat daftar restoran.
+2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerjanya!<br/>
+    BcryptPasswordEncoder adalah interface yang disediakan oleh Spring Security untuk membuat encoding pada password menggunakan slow hashing algorithm. Karena password di database tidak boleh ditunjukan secara eksplisit, maka penting untuk melakukan encoding password sebelum menampilkannya di database. Interface ini juga dapat digunakan untuk password comparison
+3. Jelaskan secara singkat apa itu UUID dan mengapa kita memakai UUID di UserModel.java?
+    UUID atau Universally Unique Identifier adalah sebuah 128-bit long value yang unique dan dapat digunakan untuk berbagai keperluan. UUID terdiri dari hex digits dengan 4 char untuk setiap digit bersama dengan 4 "-" simbol. Sehingga total characternya adalah 36.<br/>
+    UUID digunakan di UserModel.java agar id yang dihasilkan unique.
+4. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah memiliki class UserRoleServiceImpl.java?</br>
+    UserDetailsServiceImpl.java sebenarnya adalah implementasi dari interface UserDetailsService yang dimiliki spring security. Berbeda dengan UserService atau RoleService yang merupakan implementasi dari interface aplikasi ini sendiri. Kita memerlukan class tersebut untuk menjalankan proses autentikasi. Salah satu methodnya yaitu loadUserByUsername akan mencari tahu apakah person yang melakukan login sudah termasuk user sistem atau belum.
