@@ -73,4 +73,12 @@ public class RestoranModel implements Serializable{
     public void setListMenu(List<MenuModel> listMenu) {
         this.listMenu = listMenu;
     }
+
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
 }
