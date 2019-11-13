@@ -152,11 +152,21 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
 Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan.</br>
 1. Task: Menghilangkan checkbox pada item di list bagian kiri
     Saya menggunakan approach onItemClick untuk menggantikan checkbox. Ketika item di list menu di klik, maka akan dipindahkan ke list favorite item. Berikut implementasi saya</br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/1.1.PNG)</br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/1.2.PNG)</br>
 2. Task: Bagian kiri hanya melakukan operasi add
     Saya membuat fungsi handleMenuItem dimana fungsi tersebut akan menambahkan item ke list favorite item. Kemudia pada fungsi handleFavorite Item saya akan menghapus item dari list favorite item tersebut. Berikut implementasi saya</br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/2.1.PNG)</br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/2.2.PNG)</br>
 3. Task: Membuat toggle jika ON maka favorite list ditampilkan, jika OFF disembunyikan
     Disini saya akan membuat const isFavorite yang awalnya saya set ke false. Kemudian saya membuat fungsi handleFavoriteCheckboxes() untuk mengganti state boolean tersebut. Jika isFavorite false maka bagian favorite akan dikosongkan. Jika isFavorite true maka list favorite akan dimunculkan. Berikut implementasi saya</br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/3.1.PNG)</br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/3.2.PNG)</br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/3.3.PNG)</br>
 4. Task: Membuat empty state
     Disini saya membuat sebuah component empty state. Kemudian component tersebut akan saya panggil setelah saya melakukan pengecekan pda length favorite items. Apabila length favorite items = 0, maka saya akan memanggil component empty state tersebut. </br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/4.1.PNG)</br>
+    ![](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-8-reactjs/frontend/src/Images/4.2.PNG)</br>
+
 
 
