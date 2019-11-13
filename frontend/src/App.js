@@ -10,7 +10,7 @@ export default class App extends React.Component {
         isfavorite:false,
       };
     }
-    handleItemClickKiri = item => {
+    handleMenuItem = item => {
         const newItems = [...this.state.favItems];
         const newItem = {...item};
 
@@ -18,7 +18,7 @@ export default class App extends React.Component {
         newItems.push(newItem);
         this.setState({favItems: newItems});
     }
-    handleItemClickKanan = item => {
+    handleFavoriteItem = item => {
         const newItems = [...this.state.favItems];
         const newItem = {...item};
 
@@ -56,7 +56,7 @@ export default class App extends React.Component {
                                     isLeft={true}
                                     title="Our Menu"
                                     items={dummyItems}
-                                    onItemClick={this.handleItemClickKiri}
+                                    onItemClick={this.handleMenuItem}
                                 />
                             </div>
                             <div className="col-sm">
@@ -64,7 +64,7 @@ export default class App extends React.Component {
                                     isLeft={false}
                                     title="My Favorite"
                                     items={favItems}
-                                    onItemClick={this.handleItemClickKanan}
+                                    onItemClick={this.handleFavoriteItem}
                                 /> : <div />}
                                 
                             </div>

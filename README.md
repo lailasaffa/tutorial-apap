@@ -147,3 +147,16 @@ th:include akan melibatkan konten fragment yang ditulis pada host tagnya, sement
     UUID digunakan di UserModel.java agar id yang dihasilkan unique.
 4. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah memiliki class UserRoleServiceImpl.java?</br>
     UserDetailsServiceImpl.java sebenarnya adalah implementasi dari interface UserDetailsService yang dimiliki spring security. Berbeda dengan UserService atau RoleService yang merupakan implementasi dari interface aplikasi ini sendiri. Kita memerlukan class tersebut untuk menjalankan proses autentikasi. Salah satu methodnya yaitu loadUserByUsername akan mencari tahu apakah person yang melakukan login sudah termasuk user sistem atau belum.
+
+## Tutorial 8
+Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan.</br>
+1. Task: Menghilangkan checkbox pada item di list bagian kiri
+    Saya menggunakan approach onItemClick untuk menggantikan checkbox. Ketika item di list menu di klik, maka akan dipindahkan ke list favorite item. Berikut implementasi saya</br>
+2. Task: Bagian kiri hanya melakukan operasi add
+    Saya membuat fungsi handleMenuItem dimana fungsi tersebut akan menambahkan item ke list favorite item. Kemudia pada fungsi handleFavorite Item saya akan menghapus item dari list favorite item tersebut. Berikut implementasi saya</br>
+3. Task: Membuat toggle jika ON maka favorite list ditampilkan, jika OFF disembunyikan
+    Disini saya akan membuat const isFavorite yang awalnya saya set ke false. Kemudian saya membuat fungsi handleFavoriteCheckboxes() untuk mengganti state boolean tersebut. Jika isFavorite false maka bagian favorite akan dikosongkan. Jika isFavorite true maka list favorite akan dimunculkan. Berikut implementasi saya</br>
+4. Task: Membuat empty state
+    Disini saya membuat sebuah component empty state. Kemudian component tersebut akan saya panggil setelah saya melakukan pengecekan pda length favorite items. Apabila length favorite items = 0, maka saya akan memanggil component empty state tersebut. </br>
+
+

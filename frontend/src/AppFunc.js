@@ -5,14 +5,14 @@ import dummyItems from "./items.json";
 function App() {
     const [favItems, setFavItems] = useState(() => []);
     const [isFavorite, setIsFavorite] = useState(false);
-    function handleItemClickKiri(item) {
+    function handleMenuItem(item) {
         const newItems = [...favItems];
         const newItem = { ...item };
         const targetInd = newItems.findIndex(it => it.id === newItem.id);
         newItems.push(newItem);
         setFavItems(newItems);
     }
-    function handleItemClickKanan(item) {
+    function handleFavoriteItem(item) {
         const newItems = [...favItems];
         const newItem = { ...item };
         const targetInd = newItems.findIndex(it => it.id === newItem.id);
@@ -46,7 +46,7 @@ function App() {
                             isLeft={true}
                             title="Our Menu"
                             items={dummyItems}
-                            onItemClick={handleItemClickKiri}
+                            onItemClick={handleMenuItem}
                         />
                     </div>
 
@@ -55,7 +55,7 @@ function App() {
                             isLeft={false}
                             title="My Favorite"
                             items={favItems}
-                            onItemClick={handleItemClickKanan}
+                            onItemClick={handleFavoriteItem}
                         /> : <div />}
                     </div>
 
