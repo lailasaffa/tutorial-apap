@@ -16,4 +16,17 @@
     font-family: inherit;
     font-size: 1.2em;
     padding: 2px 8px;
+    box-shadow: 2px 2px 2px #36622b;
+}
+
+.DeleteRestoranButton{
+    background-color: lightpink;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid black;
+    color: black;
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 2px 8px;
+    box-shadow: 2px 2px 2px #36622b;
 }

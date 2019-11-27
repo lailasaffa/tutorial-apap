@@ -16,3 +16,5 @@ const Restoran = props => {
         </div>
     );
 }
+
+export default Restoran;

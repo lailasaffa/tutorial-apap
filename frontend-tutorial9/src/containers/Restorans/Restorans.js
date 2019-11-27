@@ -1,38 +1,45 @@
 import React, { Component } from 'react';
+import classes from './Restorans.module.css';
+import Restoran from '../../components/Restoran/Restoran';
+import axios from 'axios';
 
 class Restorans extends Component{
     constructor(props){
         super(props);
         this.state = {
-            restorans:
-                [
-                    {id: 1,nama:"Restoran A",alamat:"This is address Restoran A",nomorTelepon:"0217353113"},
-                    {id: 2,nama:"Restoran B",alamat:"This is address Restoran B",nomorTelepon:"021120491"},
-                    {id: 3,nama:"Restoran C",alamat:"This is address Restoran C",nomorTelepon:"021940256"},
-                ],
-            isLoading: false
+            restorans:[],
+            isLoading: true
         }
     }
     componentDidMount(){
-        console.log("componentDidMount()");
+        this.loadRestorans();
     }
-    shouldComponentUpdate(nextProps,nextState){
-        console.log("shouldComponentUpdate()");
-        return true;
-    }
-    loadingHandler = () => {
-        const currentIsLoading = this.state.isLoading;
-        this.setState({isLoading:!(currentIsLoading)});
-        console.log(this.state.isLoading);
+    loadRestorans = async () => {
+        const fetchedRestorans = [];
+        const response = await axios.get("/restorans");
+        for(let key in response.data){
+            fetchedRestorans.push({
+                ...response.data[key]
+            });
+        }
+        this.setState({
+            restorans: fetchedRestorans
+        });
     }
     render(){
-        console.log("render()");
         return(
             <React.Fragment>
-                <div>Hello! Welcome to Gopud</div>
-                <div>All Restorans</div>
-                <div> Restorans 1, 2, 3, etc </div>
-                <button onClick={this.loadingHandler}>Change State</button>
+                <div className={classes.Title}>All Restorans</div>
+                <div className={classes.Restorans}>
+                    {this.state.restorans.map(restoran=>
+                        <Restoran 
+                            key={restoran.id}
+                            nama={restoran.nama}
+                            alamat={restoran.alamat}
+                            nomorTelepon={restoran.nomorTelepon
+                            }/>
+                        )}
+                </div>
             </React.Fragment>
         );
     }
