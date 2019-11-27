@@ -1,32 +1,37 @@
 .Restoran{
     width: 50%;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 3px;
+    box-shadow: 2px 2px 3px #8186d5;
     padding: 10px;
     margin: 20px auto;
     box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+
+.Restoran p, h3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .EditRestoranButton{
     background-color: lightblue;
     outline: none;
     cursor: pointer;
-    border: 2px solid black;
     color: black;
     font-family: inherit;
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding: 2px 8px;
     box-shadow: 2px 2px 2px #36622b;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .DeleteRestoranButton{
     background-color: lightpink;
     outline: none;
     cursor: pointer;
-    border: 2px solid black;
     color: black;
     font-family: inherit;
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding: 2px 8px;
     box-shadow: 2px 2px 2px #36622b;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
