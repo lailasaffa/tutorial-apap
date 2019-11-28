@@ -60,3 +60,9 @@
     border: 2px solid #a0db41;
     border-radius: 0.5rem;
 }
+.PageNumberLayout{
+    width: 50%;
+    margin: auto;
+    justify-items: center;
+    padding-top: 20px;
+}

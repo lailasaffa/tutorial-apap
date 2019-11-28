@@ -22,10 +22,10 @@ public class RoleModel implements Serializable {
     @Column(name="role",nullable = false)
     private String role;
 
-    @OneToMany(mappedBy = "role",fetch = FetchType.LAZY)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private List<UserModel> userRole;
+//    @OneToMany(mappedBy = "role",fetch = FetchType.LAZY)
+//    @OnDelete(action = OnDeleteAction.CASCADE)
+//    @JsonIgnore
+//    private List<UserModel> userRole;
 
     public long getId() {
         return id;
@@ -42,12 +42,12 @@ public class RoleModel implements Serializable {
     public void setRole(String role) {
         this.role = role;
     }
-
-    public List<UserModel> getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(List<UserModel> userRole) {
-        this.userRole = userRole;
-    }
+//
+//    public List<UserModel> getUserRole() {
+//        return userRole;
+//    }
+//
+//    public void setUserRole(List<UserModel> userRole) {
+//        this.userRole = userRole;
+//    }
 }

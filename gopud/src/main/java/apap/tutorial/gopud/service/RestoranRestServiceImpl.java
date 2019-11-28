@@ -53,7 +53,7 @@ public class RestoranRestServiceImpl implements RestoranRestService{
         List<RestoranModel> listRestoranByNama = new ArrayList<>();
         List<RestoranModel> listTargetRestoran = retrieveListRestoran();
         for(RestoranModel restoran : listTargetRestoran){
-            if(restoran.getNama().equals(nama)){
+            if(restoran.getNama().contains(nama)){
                 listRestoranByNama.add(restoran);
             }
         }

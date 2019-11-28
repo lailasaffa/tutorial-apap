@@ -4,6 +4,7 @@ import Restoran from '../../components/Restoran/Restoran';
 import instance from '../../axios-restoran';
 import Modal from '../../components/UI/Modal/Modal';
 import Button from '../../components/UI/Button/Button';
+import Pagination from '../../components/UI/Pagination/Pagination';
 
 class Restorans extends Component{
     constructor(props){
@@ -17,8 +18,15 @@ class Restorans extends Component{
             nama:"",
             alamat:"",
             nomorTelepon:"",
-            rating:""
+            rating:"",
+            currentPage:1,
+            itemPerPage: 5
         }
+    }
+    paginationClickHandler = event =>{
+        this.setState({
+            currentPage: Number(event.target.id)
+        });
     }
     componentDidMount(){
         this.loadRestorans();
@@ -50,6 +58,13 @@ class Restorans extends Component{
     }
     canceledHandler = () => {
         this.setState({isCreate:false, isEdit:false});
+    }
+    updateSearchValue = event =>{
+        event.preventDefault();
+        this.setState({isLoading:true});
+        const value = event.target.value;
+        this.searchRestoranHandler(value);
+        
     }
     changeHandler = event => {
         const { name,value } = event.target;
@@ -102,6 +117,22 @@ class Restorans extends Component{
         await instance.delete(`/restoran/${restoranId}`);
         await this.loadRestorans();
     }
+    async searchRestoranHandler(nama){
+        if(nama===""){
+            this.loadRestorans();
+        }else{
+            const fetchedRestorans = [];
+            const response = await instance.get(`/search/${nama}`);
+            for(let key in response.data){
+                fetchedRestorans.push({
+                    ...response.data[key]
+                });
+            }
+            this.setState({
+                restorans: fetchedRestorans
+            });
+        }
+    }
     renderForm(){
         return(
             <form>
@@ -137,6 +168,36 @@ class Restorans extends Component{
         );
     }
     render(){
+        const { restorans, currentPage, itemPerPage } = this.state;
+
+        // Logic for displaying todos
+        const indexOfLastItem = currentPage * itemPerPage;
+        const indexOfFirstItem = indexOfLastItem - itemPerPage;
+        const currentItems = restorans.slice(indexOfFirstItem, indexOfLastItem);
+        const renderItems = currentItems.map((restoran) => 
+             <Restoran 
+                key={restoran.id}
+                nama={restoran.nama}
+                alamat={restoran.alamat}
+                nomorTelepon={restoran.nomorTelepon}
+                edit={() => this.editRestoranHandler(restoran)}
+                delete={() => this.deleteRestoranHandler(restoran.idRestoran)}
+            />
+            
+        );
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(restorans.length / itemPerPage); i++) {
+        pageNumbers.push(i);
+        }
+        const renderPageNumbers = pageNumbers.map(number => {
+            return (
+              <Pagination
+              key={number}
+              id={number}
+              onClick={this.paginationClickHandler}
+            >{number}</Pagination>
+            );
+        });
         return(
             <React.Fragment>
                 <Modal
@@ -153,20 +214,20 @@ class Restorans extends Component{
 
                     </button>
                 </div>
+
                 <div className={classes.SearchLayout}>
-                    <input className={classes.SearchInput} placeholder="--Search Restoran--"/>
+                    <input className={classes.SearchInput} placeholder="--Search Restoran--"
+                    onChange={this.updateSearchValue}/>
                 </div>
+
                 <div className={classes.Restorans}>
-                    {this.state.restorans && this.state.restorans.map(restoran=>
-                        <Restoran 
-                            key={restoran.id}
-                            nama={restoran.nama}
-                            alamat={restoran.alamat}
-                            nomorTelepon={restoran.nomorTelepon}
-                            edit={() => this.editRestoranHandler(restoran)}
-                            delete={() => this.deleteRestoranHandler(restoran.idRestoran)}
-                            />
-                        )}
+                    {renderItems}
+                </div>
+
+                <div className={classes.PageNumberLayout}>
+                    <div className={classes.PageNumbers}>
+                        {renderPageNumbers}
+                    </div>
                 </div>
             </React.Fragment>
         );

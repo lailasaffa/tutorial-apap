@@ -18,7 +18,8 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "*", allowedHeaders = "Access-Control-Allow-Origin")
+//@CrossOrigin(origins = "*", allowedHeaders = "Access-Control-Allow-Origin")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RestoranRestController {
     @Autowired
     private RestoranRestService restoranRestService;
@@ -80,7 +81,7 @@ public class RestoranRestController {
     ){
         return restoranRestService.getRestoranByNamaRestoran(nama);
     }
-    @CrossOrigin(origins = "http://localhost:3000")
+
     @GetMapping(value = "/restorans")
     private List<RestoranModel> retrieveListRestoran(){
 

@@ -29,16 +29,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/js/**").permitAll()
-                .antMatchers("/restoran/**").hasAnyAuthority("MERCHANT")
-                .antMatchers("/user/addUser/**").hasAnyAuthority("ADMIN")
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login").permitAll()
-                .and()
-                .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login").permitAll();
+                .antMatchers("/restoran/**").permitAll()
+                .antMatchers("/**").permitAll();
+//                .antMatchers("/user/addUser/**").hasAnyAuthority("ADMIN")
+
+//                .formLogin()
+//                .loginPage("/login").permitAll()
+//                .and()
+//                .logout()
+//                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//                .logoutSuccessUrl("/login").permitAll();
     }
 
     @Bean
