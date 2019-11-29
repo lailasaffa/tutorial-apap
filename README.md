@@ -10,10 +10,10 @@
     ![1](https://github.com/lailasaffa/tutorial-apap/blob/feat/tutorial-9-reactjs/frontend-tutorial9/src/assets/do-11.PNG)
 
 2. Jelaskan fungsi dari async dan await!
-    + **async**
-    We can use the async keyword before a function name to wrap the return value of this function in a Promise Async digunakan didalam fungsi untuk agar return value dari fungsi tersebut dapat dibungkus menjadi suatu promise. Dalam hal ini promise akan memiliki empat status: fulfilled, rejected, pending, dan settled.
-    + **await**
-    block. Sementara didalam async function, keyword await digunakan untuk menunggu promise apakah sudah memiliki status resolved atau rejected sebelum melanjutkan baris selanjutnya di fungsi tersebut.
+    + **async** <br/>
+    Async digunakan didalam fungsi untuk agar return value dari fungsi tersebut dapat dibungkus menjadi suatu promise. Dalam hal ini promise akan memiliki empat status: fulfilled, rejected, pending, dan settled.
+    + **await**<br/>
+    Sementara didalam async function, keyword await digunakan untuk menunggu promise apakah sudah memiliki status resolved atau rejected sebelum melanjutkan baris selanjutnya di fungsi tersebut.
 
 3. Masukkan jawaban dari TODO (Screenshot) pada Component Lifecycle pada pertanyaan ini.
     1. Mengubah Restorans.js menjadi dibawah ini
