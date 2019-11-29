@@ -4,21 +4,13 @@ import Button from "../Button/Button";
 
 const Pagination = props =>(
     <React.Fragment>
-        {/* <li
+        <a
         key={props.children}
         id={props.children}
         onClick={props.onClick}
-        className={classes.Page}>
-        {props.children}
-    </li> */}
-        <div className="row">
-            <p
-            key={props.children}
-            id={props.children}
-            onClick={props.onClick}
-            className={classes.Page}>
-            {props.children}</p>
-        </div>
+        className={[classes.Page, classes[props.activeClass]].join(" ")}
+        >
+        {props.children}</a>
         
     </React.Fragment>
       

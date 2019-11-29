@@ -96,10 +96,6 @@ class Restorans extends Component{
         this.setState({isLoading:true});
         this.editRestoran();
         this.canceledHandler();
-        this.setState({nama:""});
-        this.setState({nomorTelepon:""});
-        this.setState({alamat:""});
-        this.setState({rating:""});
     }
     async editRestoran(){
         const restoranToEdit={
@@ -123,7 +119,6 @@ class Restorans extends Component{
         }else{
             const fetchedRestorans = [];
             const response = await instance.get("/restorans");
-            var inputLength = nama.length;
             for(let key in response.data){
                 if(response.data[key].nama.includes(nama)){
                     fetchedRestorans.push({
@@ -190,16 +185,21 @@ class Restorans extends Component{
             
         );
         const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(restorans.length / itemPerPage); i++) {
-        pageNumbers.push(i);
+        for (let i = 1; i <= Math.ceil(restorans.length / itemPerPage); i++){
+            pageNumbers.push(i);
         }
         const renderPageNumbers = pageNumbers.map(number => {
+            var activeClass = this.state.currentPage === number ? 'active' : 'notActive';
             return (
-              <Pagination
-              key={number}
-              id={number}
-              onClick={this.paginationClickHandler}
-            >{number}</Pagination>
+                <div className={classes.Pagination}>
+                    <Pagination
+                        activeClass={activeClass}
+                        key={number}
+                        id={number}
+                        onClick={this.paginationClickHandler}
+                    >{number}</Pagination>
+                </div>
+              
             );
         });
         return(
