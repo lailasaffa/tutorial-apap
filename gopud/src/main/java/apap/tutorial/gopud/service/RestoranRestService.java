@@ -13,6 +13,8 @@ public interface RestoranRestService {
 
     RestoranModel getRestoranByIdRestoran(Long idRestoran);
 
+    List<RestoranModel> getRestoranByNamaRestoran(String nama);
+
     RestoranModel changeRestoran(Long idRestoran,RestoranModel restoranUpdate);
 
     void deleteRestoran(Long idRestoran);

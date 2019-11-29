@@ -12,6 +12,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -45,6 +46,18 @@ public class RestoranRestServiceImpl implements RestoranRestService{
         }else{
             throw new NoSuchElementException();
         }
+    }
+
+    @Override
+    public List<RestoranModel> getRestoranByNamaRestoran(String nama) {
+        List<RestoranModel> listRestoranByNama = new ArrayList<>();
+        List<RestoranModel> listTargetRestoran = retrieveListRestoran();
+        for(RestoranModel restoran : listTargetRestoran){
+            if(restoran.getNama().contains(nama)){
+                listRestoranByNama.add(restoran);
+            }
+        }
+        return listRestoranByNama;
     }
 
     @Override

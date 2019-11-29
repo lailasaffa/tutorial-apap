@@ -18,6 +18,8 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/v1")
+//@CrossOrigin(origins = "*", allowedHeaders = "Access-Control-Allow-Origin")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RestoranRestController {
     @Autowired
     private RestoranRestService restoranRestService;
@@ -71,6 +73,13 @@ public class RestoranRestController {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND, "ID Restoran "+String.valueOf(idRestoran)+" Not Found");
         }
+    }
+
+    @GetMapping(value = "/search/{nama}")
+    private List<RestoranModel> retrieveRestoranByNama(
+            @PathVariable(value = "nama") String nama
+    ){
+        return restoranRestService.getRestoranByNamaRestoran(nama);
     }
 
     @GetMapping(value = "/restorans")

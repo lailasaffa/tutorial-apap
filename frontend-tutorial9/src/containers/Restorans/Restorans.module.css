@@ -1,0 +1,72 @@
+.Restorans{
+    margin-top: 2%;
+}
+
+.Title{
+    width: 50%;
+    padding-top: 5%;
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
+.Input, .TextArea{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    border: 1px solid #8186d5;
+    border-radius: 0.5rem;
+}
+
+.AddRestoranButton{
+    background-color: #c6e377;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #8186d5;
+    color: #000;
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 2px #36622b;
+    border-radius: 0.5rem;
+}
+
+.AddRestoranButton:hover, .AddRestoranButton:active{
+    /* background-color: #a0db41; */
+    background-color: #8186d5;
+    border: 1px solid #c6e377;
+    color: black;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+.ButtonLayout{
+    width: 50%;
+    margin: auto;
+    justify-items: right;
+    padding-top: 20px;
+}
+
+.SearchLayout{
+    width: 50%;
+    margin: auto;
+    justify-items: right;
+    padding-top: 20px;
+}
+
+.SearchInput{
+    width: 100%;
+    height: 25px;
+    border: 2px solid #a0db41;
+    border-radius: 0.5rem;
+}
+.PageNumberLayout{
+    width: 50%;
+    margin: auto;
+    justify-items: right;
+    padding-top: 20px;
+}
+
+.Pagination{
+    display: inline-block;
+}
