@@ -120,7 +120,7 @@ class Restorans extends Component{
             const fetchedRestorans = [];
             const response = await instance.get("/restorans");
             for(let key in response.data){
-                if(response.data[key].nama.includes(nama)){
+                if(response.data[key].nama.toUpperCase().startsWith(nama.toUpperCase())){
                     fetchedRestorans.push({
                         ...response.data[key]
                     });
@@ -218,14 +218,10 @@ class Restorans extends Component{
 
                     </button>
                 </div>
-
+                
                 <div className={classes.SearchLayout}>
                     <input className={classes.SearchInput} placeholder="--Search Restoran--"
                     onChange={this.updateSearchValue}/>
-                </div>
-
-                <div className={classes.Restorans}>
-                    {renderItems}
                 </div>
 
                 <div className={classes.PageNumberLayout}>
@@ -233,6 +229,12 @@ class Restorans extends Component{
                         {renderPageNumbers}
                     </div>
                 </div>
+
+                <div className={classes.Restorans}>
+                    {renderItems}
+                </div>
+
+                
             </React.Fragment>
         );
     }

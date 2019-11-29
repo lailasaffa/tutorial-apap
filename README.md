@@ -33,12 +33,12 @@
 
 4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount.
     Notes : Penjelasan harus mencantumkan “kapan fungsi dipanggil” dan “use case apa saja yang biasanya menggunakan lifecycle method tersebut”.
-    + **componentDidMount**
+    + **componentDidMount**<br/>
     componentDidMount akan dipanggil setelah HTML didalam fungsi render() berhasil diload. Biasanya componentDidMount akan digunakan jika kita ingin render suatu component untuk pertama kali sejak render HTML selesai di load tapi belum dimunculkan. Dengan componentDidMount maka render tersebut akan dimunculkan sekali saja.
-    + **shouldComponentUpdate**
+    + **shouldComponentUpdate**<br/>
     Ketika suatu component di update, shouldComponentUpdate akan dipanggil setelah componentWillReceiveProps, namun sebelum fungsi render(). shouldComponentUpdate akan return true ketika component benar terupdate. Namun, jika component tidak ter update maka shouldComponentUpdate akan return false. Setelah false, maka lifecycle method lain tidak akan dipanggil untuk period update tersebut, termasuk render().
-    + **componentWillReceiveProps**
+    + **componentWillReceiveProps**<br/>
     Fungsi componentWillReceiveProps akan dijalankan sebelum fungsi render(). Fungsi ini akan mengambil argument nextProps, yaitu props yang akan component itu terima. Fungsi componentWillReceiveProps akan menentukan action terhadap argument object nextProps sebelum object tersebut digunakan di fungsi render(). Contoh implementasinya adalah memasukkan sebuah nilai tertinggi ke component number sebelum component tersebut dipass ke render().
-    + **componentWillUnmount**
+    + **componentWillUnmount**<br/>
     ...componentWillUnmount akan dipanggil tepat sebelum component diremove dari DOM. Jika component memerlukan metode "clean up", maka componentWillMount seharusnya berisi metod clean up tersebut. 
 

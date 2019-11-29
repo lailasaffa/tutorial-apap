@@ -63,7 +63,7 @@
 .PageNumberLayout{
     width: 50%;
     margin: auto;
-    justify-items: center;
+    justify-items: right;
     padding-top: 20px;
 }
 
