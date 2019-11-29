@@ -122,11 +122,15 @@ class Restorans extends Component{
             this.loadRestorans();
         }else{
             const fetchedRestorans = [];
-            const response = await instance.get(`/search/${nama}`);
+            const response = await instance.get("/restorans");
+            var inputLength = nama.length;
             for(let key in response.data){
-                fetchedRestorans.push({
-                    ...response.data[key]
-                });
+                if(response.data[key].nama.includes(nama)){
+                    fetchedRestorans.push({
+                        ...response.data[key]
+                    });
+                }
+                
             }
             this.setState({
                 restorans: fetchedRestorans
